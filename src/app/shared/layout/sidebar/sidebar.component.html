@@ -1,27 +1,37 @@
-<div class="sidebar-container">
-    <mat-nav-list>
-      @for (item of menuItems; track item.label) {
-        @if (!item.children) {
-          <a mat-list-item [routerLink]="[item.route]" class="menu-item">
-            <mat-icon>{{item.icon}}</mat-icon>
-            <span class="menu-label">{{item.label}}</span>
-          </a>
-        } @else {
-          <mat-expansion-panel class="menu-expansion">
-            <mat-expansion-panel-header>
-              <mat-panel-title class="menu-item">
-                <mat-icon>{{item.icon}}</mat-icon>
-                <span class="menu-label">{{item.label}}</span>
-              </mat-panel-title>
-            </mat-expansion-panel-header>
-            @for (child of item.children; track child.label) {
-              <a mat-list-item [routerLink]="[child.route]" class="submenu-item">
-                <mat-icon>{{child.icon}}</mat-icon>
-                <span class="menu-label">{{child.label}}</span>
-              </a>
+<mat-sidenav-container class="app-container">
+  <mat-sidenav mode="side" opened>
+      <div class="sidebar-container">
+          <mat-nav-list>
+            @for (item of menuItems; track item.label) {
+              @if (!item.children) {
+                <a mat-list-item [routerLink]="[item.route]" class="menu-item">
+                  <mat-icon>{{item.icon}}</mat-icon>
+                  <span class="menu-label">{{item.label}}</span>
+                </a>
+              } @else {
+                <mat-expansion-panel class="menu-expansion">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title class="menu-item">
+                      <mat-icon>{{item.icon}}</mat-icon>
+                      <span class="menu-label">{{item.label}}</span>
+                    </mat-panel-title>
+                  </mat-expansion-panel-header>
+                  @for (child of item.children; track child.label) {
+                    <a mat-list-item [routerLink]="[child.route]" class="submenu-item">
+                      <mat-icon>{{child.icon}}</mat-icon>
+                      <span class="menu-label">{{child.label}}</span>
+                    </a>
+                  }
+                </mat-expansion-panel>
+              }
             }
-          </mat-expansion-panel>
-        }
-      }
-    </mat-nav-list>
-  </div>
+          </mat-nav-list>
+        </div>
+      
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <div class="content">
+          <router-outlet></router-outlet>
+      </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
