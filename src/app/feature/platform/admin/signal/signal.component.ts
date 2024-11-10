@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
-
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 @Component({
   selector: 'app-signal',
   standalone: true,
-  imports: [],
+  imports: [MatSlideToggleModule],
   templateUrl: './signal.component.html',
   styleUrl: './signal.component.scss'
 })

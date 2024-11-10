@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-    {path: '', redirectTo: 'admin', pathMatch: 'full'},
+    {path: '', redirectTo: 'platform', pathMatch: 'full'},
     { 
-        path: 'admin', 
-        loadChildren: () => import('./feature/platform/admin/admin.route').then(mod => mod.ADMIN_ROUTES) 
+        path: 'platform', 
+        loadChildren: () => import('./feature/platform/platform.routes').then(mod => mod.PLATFORM_ROUTES) 
     }
 ];
