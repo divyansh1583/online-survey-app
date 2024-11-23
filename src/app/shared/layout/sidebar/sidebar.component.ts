@@ -28,9 +28,6 @@ interface MenuItem {
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
-  toggleSidebar() {
-    throw new Error('Method not implemented.');
-  }
   menuItems: MenuItem[] = [
     {
       label: 'Dashboard',

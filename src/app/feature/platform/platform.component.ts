@@ -15,11 +15,7 @@ import { HeaderComponent } from "../../shared/layout/header/header.component";
   styleUrl: './platform.component.scss'
 })
 export class PlatformComponent {
-  @ViewChild(SidebarComponent)
-  sidebar!: SidebarComponent;
 
-  toggleSidebar(): void {
-    this.sidebar.toggleSidebar();
   }
 
-}
+
