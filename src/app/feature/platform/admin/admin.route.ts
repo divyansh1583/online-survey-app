@@ -1,8 +1,8 @@
 import { Route } from "@angular/router";
-import { SignalComponent } from "./signal/signal.component";
-
+import path from "node:path";
+import { HomeComponent } from "./home/home.component";
 
 export const ADMIN_ROUTES: Route[] = [
-    { path: '', redirectTo: 'signal', pathMatch: 'full' },
-    { path: 'signal', component: SignalComponent },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent }
 ];
