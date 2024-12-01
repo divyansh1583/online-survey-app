@@ -10,4 +10,10 @@
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
     <mat-icon>share</mat-icon>
   </button>
+  <button mat-icon-button class="theme-toggle" aria-label="Switch to dark theme" 
+        [matTooltip]="isDarkMode ? 'Switch to light theme' : 'Switch to dark theme'"
+
+        (click)="toggleTheme()">
+  <mat-icon>{{ isDarkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+</button>
 </mat-toolbar>

@@ -11,4 +11,14 @@ import {MatTooltipModule} from '@angular/material/tooltip';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
+  isDarkMode = false;
+
+  toggleTheme(): void {
+    this.isDarkMode = !this.isDarkMode;
+    if (this.isDarkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }
 }
