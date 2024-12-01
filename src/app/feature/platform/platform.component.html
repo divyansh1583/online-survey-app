@@ -1,2 +1,2 @@
-<app-header></app-header>
-<app-sidebar></app-sidebar>
+<app-header (sidebarToggle)="onSidebarToggle($event)"></app-header>
+<app-sidebar [isSidebarOpened]="isSidebarOpened"></app-sidebar>

@@ -1,10 +1,10 @@
 <mat-sidenav-container class="app-container">
-  <mat-sidenav opened mode="side" class="sidebar-container" cdkScrollable>
+  <mat-sidenav [opened]="isSidebarOpened()" mode="side" class="sidebar-container" cdkScrollable>
 
     @for (menuItem of menuItems; track menuItem.id) {
     @if (!menuItem.children) {
     <mat-nav-list>
-      <a mat-list-item [routerLink]="menuItem.route" [activated]="true">
+      <a mat-list-item [routerLink]="menuItem.route" routerLinkActive>
         <mat-icon matListItemIcon>{{ menuItem.icon }}</mat-icon>
         <div matListItemTitle>{{ menuItem.label }}</div>
       </a>
@@ -13,26 +13,26 @@
     }
     @else {
     <mat-nav-list>
-      
-    <mat-accordion displayMode='flat'>
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            <mat-icon>{{ menuItem.icon }}</mat-icon>
-            {{menuItem.label}}
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-        @for (childMenuItem of menuItem.children; track childMenuItem.id) {
-        <mat-nav-list>
-          <a mat-list-item [routerLink]="childMenuItem.route" [activated]="false">
-            <mat-icon matListItemIcon>{{ childMenuItem.icon }}</mat-icon>
-            {{ childMenuItem.label }}
-          </a>
-        </mat-nav-list>
-        }
-      </mat-expansion-panel>
-    </mat-accordion>
-  </mat-nav-list>
+
+      <mat-accordion displayMode='flat'>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <mat-icon>{{ menuItem.icon }}</mat-icon>
+              {{menuItem.label}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          @for (childMenuItem of menuItem.children; track childMenuItem.id) {
+          <mat-nav-list>
+            <a mat-list-item [routerLink]="childMenuItem.route" routerLinkActive>
+              <mat-icon matListItemIcon>{{ childMenuItem.icon }}</mat-icon>
+              {{ childMenuItem.label }}
+            </a>
+          </mat-nav-list>
+          }
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-nav-list>
 
     }
     }

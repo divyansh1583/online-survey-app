@@ -10,12 +10,15 @@ import { HeaderComponent } from "../../shared/layout/header/header.component";
     CommonModule,
     HeaderComponent,
     SidebarComponent
-],
+  ],
   templateUrl: './platform.component.html',
   styleUrl: './platform.component.scss'
 })
 export class PlatformComponent {
-
+  isSidebarOpened=true;
+  onSidebarToggle(event:boolean){
+    this.isSidebarOpened=event;
   }
+}
 
 
