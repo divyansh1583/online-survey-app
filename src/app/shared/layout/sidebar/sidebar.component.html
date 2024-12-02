@@ -18,8 +18,8 @@
         <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-title>
-              <mat-icon>{{ menuItem.icon }}</mat-icon>
-              {{menuItem.label}}
+                  <mat-icon >{{ menuItem.icon }}</mat-icon>
+                  {{ menuItem.label }}
             </mat-panel-title>
           </mat-expansion-panel-header>
           @for (childMenuItem of menuItem.children; track childMenuItem.id) {
