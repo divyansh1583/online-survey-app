@@ -16,6 +16,11 @@ export const ADMIN_ROUTES: Route[] = [
             import('./experiment/hydration/hydration.component').then((m) => m.HydrationComponent), 
     },
     {
+        path: 'date-time-picker',
+        loadComponent: () =>
+            import('./experiment/date-time-picker/date-time-picker.component').then((m) => m.DateTimePickerComponent), 
+    },
+    {
         path: '',
         redirectTo: '/platform/admin/home',
         pathMatch: 'full'

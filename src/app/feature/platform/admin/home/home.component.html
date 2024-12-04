@@ -5,3 +5,12 @@
     <mat-timepicker-toggle matIconSuffix [for]="picker"/>
     <mat-timepicker #picker/>
   </mat-form-field>
+
+  <p>{{currentDate}}</p>
+  <p>{{currentDate | date:'short' }}</p>
+  <!-- <p>{{localDate  }}</p> -->
+   <br>
+   <p>Converted To ISO</p>
+   <p>{{ogCurrentDate }}</p>
+   <p>{{convertedToISO}}</p>
+  <p>{{convertedToISO | date:'short' }}</p>

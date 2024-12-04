@@ -23,6 +23,12 @@ export const MenuItemsData: MenuItem[] = [
           label: 'Hydration',
           icon: 'group_work',
           route: '/platform/admin/hydration'
+        },
+        {
+          id: 23,
+          label: 'DateTimePicker',
+          icon: 'group_work',
+          route: '/platform/admin/date-time-picker'
         }
       ]
     },
