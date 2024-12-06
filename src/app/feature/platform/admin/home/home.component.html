@@ -6,3 +6,10 @@
       [style.background]="tile.color">{{tile.text}}</mat-grid-tile>
   }
 </mat-grid-list>
+
+<mat-radio-group aria-label="Select an option" [(ngModel)]="radioValue">
+  <mat-radio-button [value]="0" [checked]="true">Option 1</mat-radio-button>
+  <mat-radio-button [value]="1">Option 2</mat-radio-button>
+</mat-radio-group>
+
+<p>{{radioValue}}</p>
