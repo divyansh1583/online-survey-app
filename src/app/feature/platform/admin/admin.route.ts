@@ -21,6 +21,11 @@ export const ADMIN_ROUTES: Route[] = [
             import('./experiment/date-time-picker/date-time-picker.component').then((m) => m.DateTimePickerComponent), 
     },
     {
+        path: 'linked-signals',
+        loadComponent: () =>
+            import('./experiment/linked-signals/linked-signals.component').then((m) => m.LinkedSignalsComponent), 
+    },
+    {
         path: '',
         redirectTo: '/platform/admin/home',
         pathMatch: 'full'

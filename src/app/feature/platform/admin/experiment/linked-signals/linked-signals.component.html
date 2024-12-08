@@ -1,0 +1,19 @@
+<div>
+    <label>
+        <input type="checkbox" (change)="showSMSTemplates.set(!showSMSTemplates())" />
+        Show SMS Templates
+    </label>
+</div>
+
+<div>
+    <h3>Available Templates:</h3>
+    <select [(ngModel)]="selectedTemplate">
+        <!-- <option selected>Select Template</option> -->
+        @for (template of surveyTemplate(); track $index) {
+        <option [value]="template">
+            {{ template }}
+        </option>
+        }
+    </select>
+    <span style="margin-left: 1rem;">{{selectedTemplate()}}</span>
+</div>

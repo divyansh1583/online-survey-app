@@ -15,21 +15,27 @@ export const MenuItemsData: MenuItem[] = [
         {
           id: 21,
           label: 'Signal',
-          icon: 'list',
+          icon: 'wifi',
           route: '/platform/admin/signal'
+        },
+        {
+          id: 24,
+          label: 'Linked Signals',
+          icon: 'sensors',
+          route: '/platform/admin/linked-signals'
         },
         {
           id: 22,
           label: 'Hydration',
-          icon: 'group_work',
+          icon: 'fire_hydrant',
           route: '/platform/admin/hydration'
         },
         {
           id: 23,
           label: 'DateTimePicker',
-          icon: 'group_work',
+          icon: 'event',
           route: '/platform/admin/date-time-picker'
-        }
+        },
       ]
     },
     // {
