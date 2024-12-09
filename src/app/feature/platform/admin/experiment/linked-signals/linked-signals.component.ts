@@ -11,7 +11,6 @@ import { FormsModule } from '@angular/forms';
 export class LinkedSignalsComponent {
   showSMSTemplates = signal(false);
   surveyTemplate: Signal<string[]> = this.getSurveyTemplates();
-
   getSurveyTemplates() {
     return computed(() => {
       if (this.showSMSTemplates()) {
@@ -31,16 +30,14 @@ export class LinkedSignalsComponent {
   /*-------------------------------------------------------------------------------------------------- */
   /*Resource - Async activity withs signals*/
 
-  todosList=this.getTodoList();
-  getTodoList(){
-
-  }
-  // userResource = resource({
-  //   // Define a reactive request computation.
-  //   // The request value recomputes whenever any read signals change.
-  //   request: () => ({id: userId()}),
-  //   // Define an async loader that retrieves data.
-  //   // The resource calls this function every time the `request` value changes.
-  //   loader: ({request}) => fetchUser(request),
-  // });
+  todoListResource = resource({
+    loader: async ({ abortSignal }): Promise<any> => {
+      const response = await fetch(`https://jsonplaceholder.typicode.com/todos`, { signal: abortSignal });
+      if (!response.ok) {
+        throw new Error('Failed to fetch todos');
+      }
+      return response.json(); // Parse the JSON response
+    }
+  });
+  
 }

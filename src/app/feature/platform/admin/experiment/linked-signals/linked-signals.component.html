@@ -17,3 +17,18 @@
     </select>
     <span style="margin-left: 1rem;">{{selectedTemplate()}}</span>
 </div>
+<div>
+    <h3>Todo List:</h3>
+    <!-- <option selected>Select Template</option> -->
+    <ul>
+        @for (todo of todoListResource.value(); track todo.id) {
+            <li>
+                {{todo.title}}
+            </li>
+        }
+        @empty {
+            Nothing to show!
+        }
+    </ul>
+    <span style="margin-left: 1rem;">{{selectedTemplate()}}</span>
+</div>
