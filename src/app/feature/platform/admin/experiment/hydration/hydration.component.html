@@ -1,1 +1,6 @@
-<button [ngClass]="{'active': isButtonActive}" >Toggle Button</button>
+@defer (hydrate on interaction) {
+    <app-dehydrated-button></app-dehydrated-button>
+}
+@placeholder {
+    Loading....
+}

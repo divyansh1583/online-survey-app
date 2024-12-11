@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { NgClass } from '@angular/common';
+import { DehydratedButtonComponent } from './dehydrated-button/dehydrated-button.component';
 @Component({
   selector: 'app-hydration',
-  imports: [NgClass],
+  imports: [DehydratedButtonComponent],
   templateUrl: './hydration.component.html',
   styleUrl: './hydration.component.scss'
 })
 export class HydrationComponent implements OnInit {
-  isButtonActive: boolean = false;
-
   ngOnInit(): void {
-    this.isButtonActive=true;
+
   }
 }
